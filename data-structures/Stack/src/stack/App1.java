@@ -42,6 +42,20 @@ public class App1 {
         }
     }
     
+    public static void deleteEvenNumbers(ArrayBoundedStack<Integer> s){
+        ArrayBoundedStack<Integer> temp = new ArrayBoundedStack<>();
+        
+        while(!s.isEmpty()){
+            if(s.top() % 2 != 0) temp.push(s.top());
+            s.pop();
+        }
+        
+        while(!temp.isEmpty()){
+            s.push(temp.top());
+            temp.pop();
+        }
+    }
+    
     public static void main(String[] args) {
        
         ArrayBoundedStack<Integer> s1 = new ArrayBoundedStack<>();
